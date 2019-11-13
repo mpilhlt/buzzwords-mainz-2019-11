@@ -1,0 +1,551 @@
+<!doctype html>
+
+<html lang="de">
+<head>
+    <title>Wagner - Von Buzzwords, Stopwords, Wörterbüchern und Word Embeddings</title>
+
+    <!-- meta information -->
+    <meta name="author" content="Andreas Wagner" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- favicons -->
+    <link rel="shortcut icon" href="resources/img/favicon.png" />
+    <link rel="apple-touch-icon" href="resources/img/apple-touch-icon.png" />
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+
+    <!-- CSS reset and grid -->
+    <link href="vendor/normalize/normalize-4.1.1.css" rel="stylesheet" />
+    <link href="vendor/skeleton/skeleton-2.0.4.css" rel="stylesheet" />
+
+    <!-- styles for included libraries -->
+    <link rel="stylesheet" href="extras/highlight/styles/github.css">
+
+    <!-- mermaid -->
+    <link rel="stylesheet" href="extras/mermaid/mermaid.forest.css">
+
+<!--
+    <!-/- chartist -/->
+    <link rel="stylesheet" href="vendor/chartist/chartist.min-0.9.7.css" />
+-->
+
+    <!-- codemirror -->
+    <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/styles/default.css" />
+    <link rel="stylesheet" href="resources/css/hljs.linenumbering.css" />
+
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup-1.1.0.css" />
+
+    <!-- standard presentation styles -->
+    <link href="resources/css/style.css" rel="stylesheet" />
+
+    <!-- custom presentation styles -->
+    <link href="resources/css/custom.css" rel="stylesheet" />
+
+    <!-- js needed in head -->
+
+    <!-- greuler -->
+    <script src="vendor/d3/d3-3.5.6.js"></script>
+    <script src="vendor/cola/cola.v3.min.js"></script>
+    <script src="vendor/greuler/greuler-0.5.5.min.js"></script>
+
+    <!-- html5 dataset shim for IE -->
+    <script src="vendor/impress/html5-dataset.js" type="text/javascript"></script>
+
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress" data-transition-duration="750">
+
+    <div class="step slide" id="title" data-x="0" data-y="0">
+        <h4><strong>2019-11-13</strong> | <a class="green" href="https://www.uni-mainz.de/">JGU Mainz</a></h4>
+        <h4><strong class="small"><a class="green" href="">Ringvorlesung Digitale Methodik in den Geistes- und Kulturwissenschaften</a></strong></h4>
+
+        <h1 class="down-100">Von Buzzwords, Stopwords, Wörterbüchern und Word Embeddings. Text Mining und Information Retrieval</h1>
+
+        <h4 class="down-100">
+            <strong>Slides:</strong>
+            <a href="https://rg-mpg-de.github.io/buzzwords-mainz-2019-11/" title="Präsentation online betrachten">https://rg-mpg-de.github.io/buzzwords-mainz-2019-11/</a>
+        </h4>
+
+        <h5>
+            <strong><a class="green" href="https://www.rg.mpg.de/wagner">Andreas Wagner</a></strong> |
+            <img src="resources/img/twitter_bird_logo_2012.svg" alt="Twitter" class="twitter-icon" />
+                <a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a> |
+            <img src="resources/img/octicons-mark-github.svg" alt="Github" class="gh-icon" />
+                <a class="green" href="https://github.com/rg-mpg-de" title="MPIeR on GitHub">rg-mpg-de</a> |
+                <a class="green" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a><br/>
+        </h5>
+    </div>
+
+    <div class="step slide" id="intro" data-rel-x="1000" data-y="0">
+        <header>
+            <h1>Inhalt</h1>
+        </header>
+        <main>
+            <h2>Inhalt</h2>
+            <ul>
+                <li>Information Retrieval</li>
+                <li>Natural Language Processing
+                    <ul>
+                        <li>Preprocessing</li>
+                        <li>Ling. Annotationen</li>
+                        <li>Feature Engineering</li>
+                    </ul>
+                </li>
+                <li>Buzzwords</li>
+            </ul>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_samples_1">
+        <header>
+            <h1>Einleitung</h1>
+            <h2>Beispiele</h2>
+        </header>
+        <main>
+            <h2>Antwortsystem</h2>
+            <div class="mfp-gallery">
+                <a class="green" href="resources/img/sleimi_1.png">
+                    <img style="height:500px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/sleimi_1.png"
+                         alt="Text annotated with Legal Metadata"/>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_samples_2">
+        <header>
+            <h1>Einleitung</h1>
+            <h2>Beispiele</h2>
+        </header>
+        <main>
+            <h2>Klassifikation</h2>
+            <div class="mfp-gallery">
+                <a class="green" href="resources/img/romein_1.png">
+                    <img style="height:500px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/romein_1.png"
+                         alt="Ordinance"/>
+                </a>
+                <a class="green" href="resources/img/policey_1.png">
+                    <img style="height:5px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/policey_1.png"
+                         alt="Taxonomy (excerpt)"/>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_samples_3">
+        <header>
+            <h1>Einleitung</h1>
+            <h2>Beispiele</h2>
+        </header>
+        <main>
+            <h2>Zusammenfassung</h2>
+            <div class="mfp-gallery">
+                <a class="green" href="resources/img/wordcloud_1.jpg">
+                    <img style="height:500px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/wordcloud_1.jpg"
+                         alt="Wordcloud"/>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_samples_4">
+        <header>
+            <h1>Einleitung</h1>
+            <h2>Beispiele</h2>
+        </header>
+        <main>
+            <h2>Ähnlichkeitssuche</h2>
+            <div class="mfp-gallery">
+                <a class="green" href="resources/img/simil_1.png">
+                    <img style="height:500px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/simil_1.png"
+                         alt="Similar sentences"/>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_t">
+        <header>
+            <h1>Einleitung</h1>
+            <h2>DFM</h2>
+        </header>
+        <main>
+            <h2>Document Feature Matrix</h2>
+            <div class="mfp-gallery">
+                <a class="green" href="resources/img/dtm_1.png">
+                    <img style="height:500px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/dtm_1.png"
+                         alt="Document Term Matrix"/>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <div class="step slide" id="ir">
+        <main>
+            <h1 class="green">01</h1>
+            <h2 class="line-height-one-five">
+                Information Retrieval
+            </h2>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_p">
+        <header>
+            <h1>Information Retrieval</h1>
+        </header>
+        <main>
+            <h2>Fragestrategien</h2>
+            <ul>
+                <li>boolesche Operatoren</li>
+                <li>reguläre Ausdrücke</li>
+                <li>"fuzzy matching"</li>
+            </ul>
+            <div class="mfp-gallery">
+                <a class="green" href="resources/img/synonymsearch_1.png">
+                    <img style="height:500px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/synonymsearch_1.png"
+                         alt="Search for Synonyms (Google)"/>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_toc">
+        <header>
+            <h1>Information Retrieval</h1>
+        </header>
+        <main>
+            <h2>Evaluation</h2>
+            <ul>
+                <li>Precision (False Positives)</li>
+                <li>Recall (False Negatives)</li>
+                <li>F-Score 2 x ( (precision x recall) / (precision + recall) ) </li>
+            </ol>
+       </main>
+    </div>
+
+    <div class="step slide" id="nlp">
+        <main>
+            <h1 class="green">02</h1>
+            <h2 class="line-height-one-five">
+                Natural Language Processing
+            </h2>
+        </main>
+    </div>
+
+    <div class="step slide" id="nlp_preproc">
+        <header>
+            <h1>NLP</h1>
+        </header>
+        <main>
+            <h2>Preprocessing</h2>
+            <ul>
+                <li>Encoding (<em>utf-8</em>)<br/>
+                <small>Buki (Ⰱ): Satzzeichen oder Buchstabe?</small></li>
+                <li>Tokenisierung</li>
+                <li>Normalisierung
+                    <ul>
+                        <li>lowercase</li>
+                        <li>Zahlen umwandeln</li>
+                        <li>Orthografie und Abkürzungen</li>
+                        <li>Lemmatisierung (Stemming)</li>
+                    </ul>
+                </li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="nlp_annot">
+        <header>
+            <h1>NLP</h1>
+        </header>
+        <main>
+            <h2>Annotationen</h2>
+            <ul>
+                <li>Part-of-Speech tags (POS)</li>
+                <li>Constituency/Phrase structure parsing</li>
+                <li>Dependency parsing</li>
+                <li>Wordnets u.ä.</li>
+            </ul>
+            <!-- TODO: Beispiel Das Essen ist fertig. -->
+       </main>
+    </div>
+
+    <div class="step slide" id="nlp_fe1">
+        <header>
+            <h1>NLP</h1>
+            <h2>Feature Engineering</h2>
+        </header>
+        <main>
+            <h2>DTM 1</h2>
+            <ul>
+                <li>Gesamtvokabular: alle Types des Korpus</li>
+                <li>Für alle Dokumente: alle Types zählen</li>
+                <li>→ Tabelle (<em>Document Term/Feature Matrix (DFM/DTM)</em></li>
+                <li>→ Dokumente als Vektoren vergleichbar</li>
+                <li>→ Features ebenfalls als Vektoren vergleichbar</li>
+                <li>Selektion (<em>Stopwords</em>/<em>hapax legomena</em>)</li>
+                <li>Gewichtung (<em>tf/idf</em>)</li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="nlp_fe2">
+        <header>
+            <h1>NLP</h1>
+            <h2>Feature Engineering</h2>
+        </header>
+        <main>
+            <h2>DTM 2</h2>
+            <ul>
+                <li>Was ist ein Dokument? Z.B. Aufteilung in Sätze</li>
+                <li>Was ist ein Feature? Z.B. Skipgrams</li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="buzz">
+        <main>
+            <h1 class="green">03</h1>
+            <h2 class="line-height-one-five">
+                More Buzzwords...
+            </h2>
+        </main>
+    </div>
+
+    <div class="step slide" id="buzz_tm">
+        <header>
+            <h1>Buzzwords</h1>
+        </header>
+        <main>
+            <h2>Distributionelle Semantik</h2>
+            <ul>
+                <li>"You shall know a word by the company it keeps." (Firth 1957)</li>
+                <li><em>Latent Semantic Analysis/Indexing (LSA/LSI)</em></li>
+                <li><em>Topic Modeling</em>, <em>Latent Dirichlet Allocation (LDA)</em></li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="buzz_dr">
+        <header>
+            <h1>Buzzwords</h1>
+        </header>
+        <main>
+            <h2>Dimensionality Reduction</h2>
+            <h3>→ <em>Word Embeddings</em></h3>
+            <ul>
+                <li><em>word2vec</em> (2013)</li>
+                <li><em>ELMo</em> (2018)</li>
+                <li><em>BERT</em> (2018)</li>
+            </ul>
+            <div class="mfp-gallery">
+                <a class="green" href="resources/img/elmo_1.gif">
+                    <img style="height:500px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/elmo_1.gif"
+                         alt="Elmo"/>
+                </a>
+                <a class="green" href="resources/img/bert_1.jpg">
+                    <img style="height:5px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/bert_1.jpg"
+                         alt="Bert"/>
+                </a>
+            </div>
+       </main>
+    </div>
+
+    <div class="step slide" id="conclusion">
+        <main>
+            <h1 class="green">04</h1>
+            <h2 class="line-height-one-five">
+                Schluss
+            </h2>
+        </main>
+    </div>
+
+    <div class="step slide" id="conclusion_1">
+        <header>
+            <h1>Schluss</h1>
+        </header>
+        <main>
+            <h2>NLP in Information Retrieval und Text Mining</h2>
+            <ul>
+                <li>Lemmatisierung für varientensensible Suche</li>
+                <li>Feature Engineering für Ranking, Synonyme, "das könnte Sie auch interessieren"</li>
+            </ul>
+       </main>
+    </div>
+
+
+    <div class="step slide" id="literatur">
+        <header>
+            <h1>Literatur</h1>
+        </header>
+        <main>
+            <ul>
+                <li>Bird, S., Klein, E., Loper, E.: Natural Language Processing with Python. O'Reilly 2009 (Aktualisierte) URL: http://nltk.org/book/</li>
+                <li>Boas, H.C.: Multilingual FrameNets. Methods and Applications. Mouton de Gruyter, 2009</li>
+                <li>Fellbaum, C.: "WordNet and wordnets", in: Brown, Keith et al. (eds.), Encyclopedia of Language and Linguistics. Oxford ²2005, pp. 665-670</li>
+                <li>Ferber, Reginald: Information Retrieval. Suchmodelle und Data-Mining-Verfahren für Textsammlungen und das Web. dpunkt.verlag 2003. URL: http://information-retrieval.de/</li>
+                <li>Firth, J.R.: Papers in Linguistics 1934-51. Longmans, 1957</li>
+                <li>Haenelt, Karin: Ähnlichkeitsmaße für Vektoren. Kursfolien. 2006. URL: http://kontext.fraunhofer.de/haenelt/kurs/folien/VektorAehnlichkeit-2.pdf</li>
+                <li>Jannidis, F., Kohle, H., Rehbein, M. (Hrsg.): Digital Humanities. Eine Einführung. Metzler, 2017</li>
+                <li>Jurafsky, D., Martin, J.H.: Speech and Language Processing. Prentice Hall, ²2008. (Besser, weil aktualisiert und frei verfügbar: URL: https://web.stanford.edu/~jurafsky/slp3/)</li>
+                <li>Mikolov, T., Chen, K., Corrado, G., Dean, J.: "Efficient Estimation of Word Representations in Vector Space". URL: https://arxiv.org/abs/1301.3781</li>
+                <li>Sarkar, D.: Text Analysis with Python. Apress, 2016</li>
+                <li>Schmid, H.: Improvements in Part-of-Speech Tagging with an Application to German. Proceedings of the ACL SIGDAT-Workshop. Dublin, Ireland. 1995 URL: https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/tree-tagger2.pdf
+                    <br/>(Software unter URL: https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/)</li>
+                <li>Silge, J., Robinson, D.: Text Mining with R. O'Reilly, 2017. URL: http://tidytextmining.com</li>
+                <li>Sleimi, A., N. Sannier, M. Sabetzadeh, L. Briand, und J. Dann: "Automated Extraction of Semantic Legal Metadata using Natural Language Processing", in: 2018 IEEE 26th International Requirements Engineering Conference (RE), 124–35, 2018. DOI: https://doi.org/10.1109/RE.2018.00022</li>
+                <li>Speer, R., Chin, J. and Havasi, C.: "ConceptNet 5.5: An Open Multilingual Graph of General Knowledge", in: Poceedings of AAAI 31 (2017). URL: https://arxiv.org/abs/1612.03975</li>
+            </ul>
+       </main>
+    </div>
+
+
+    <!--
+        
+        This is an example of step element being scaled.
+        
+        Again, we use a `data-` attribute, this time it's `data-scale="4"`, so it means that this
+        element will be 4 times larger than the others.
+        From presentation and transitions point of view it means, that it will have to be scaled
+        down (4 times) to make it back to its correct size.
+        
+    -->
+    <!--
+    <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+        <span class="try">then you should try</span>
+        <h1>impress.js<sup>*</sup></h1>
+        <span class="footnote"><sup>*</sup> no rhyme intended</span>
+    </div>
+    -->
+
+    <!--
+        
+        And the last one shows full power and flexibility of impress.js.
+        
+        You can not only position element in 3D, but also rotate it around any axis.
+        So this one here will get rotated by -40 degrees (40 degrees anticlockwise) around X axis and
+        10 degrees (clockwise) around Y axis.
+        
+        You can of course rotate it around Z axis with `data-rotate-z` - it has exactly the same effect
+        as `data-rotate` (these two are basically aliases).
+        
+    -->
+    <!--
+    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+        <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it’s</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
+        <span class="footnote">* beat that, prezi ;)</span>
+    </div>
+    -->
+
+    <!--
+        
+        So to summarize of all the possible attributes used to position presentation steps, we have:
+        
+        * `data-x`, `data-y`, `data-z` - they define the position of **the center** of step element on
+            the canvas in pixels; their default value is 0;
+        * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` - they define the rotation of
+            the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
+            are exactly the same;
+        * `data-scale` - defines the scale of step element; default value is 1
+        
+        These values are used by impress.js in CSS transformation functions, so for more information consult
+        CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
+        
+    -->
+
+</div>
+
+<!--
+    This is a UI plugin. You can read more about plugins in src/plugins/README.md.
+    For now, I'll just tell you that this adds some graphical controls to navigate the
+    presentation. In the CSS file you can style them as you want. We've put them bottom right.
+-->
+<!--
+<div id="impress-toolbar"></div>
+-->
+
+<!--
+    
+    Hint is not related to impress.js in any way.
+    
+    But it can show you how to use impress.js features in creative way.
+    
+    When the presentation step is shown (selected) its element gets the class of "active" and the body element
+    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
+    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
+    
+    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
+    the first step of presentation is visible for a couple of seconds.
+    
+    ...
+    
+    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
+    It's just a quick and dirty workaround to get different hint text for touch devices.
+    In a real world it should be at least placed in separate JS file ... and the touch content should be
+    probably just hidden somewhere in HTML - not hard-coded in the script.
+    
+    Just sayin' ;)
+    
+-->
+<!--
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate. <br/>
+       Press 'P' to launch speaker console.</p>
+</div>
+-->
+
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Swipe left or right to navigate</p>";
+}
+</script>
+
+<!-- jquery -->
+<script src="vendor/jquery/jquery-1.11.0.min.js"></script>
+
+<!-- Extra modules
+     Load highlight.js, mermaid.js and impressConsole.js from extras.
+     If you're curious about details, these are initialized in src/plugins/extras/extras.js -->
+<script type="text/javascript" src="extras/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="extras/mermaid/mermaid.min.js"></script>
+
+<!-- highlight -->
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="resources/js/hljs.linenumbering.js"></script>
+
+<!-- magnific popup -->
+<script src="vendor/magnific-popup/jquery.magnific-popup.min-1.1.0.js"></script>
+<script src="resources/js/magnific-popup.lightbox.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
