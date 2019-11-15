@@ -41,5 +41,10 @@
     "syn": "^0.13.0",
     "terser": "^3.17.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "eslint-utils": "^1.4.3",
+    "lodash": "^4.17.15",
+    "mixin-deep": "^2.0.1",
+    "set-value": "^3.0.1"
+  }
 }
