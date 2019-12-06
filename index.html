@@ -311,12 +311,13 @@
                 <li>Encoding (<em>utf-8</em>)<br/>
                 <small>Buki (Ⰱ): Satzzeichen oder Buchstabe? - Unicode weiß es!</small></li>
                 <li>Tokenisierung</li>
+                <li>Satzaufteilung (<em>sentence segmentation</em>)</li>
                 <li>Normalisierung
                     <ul>
                         <li>lowercase</li>
                         <li>Zahlen eliminieren/umwandeln</li>
                         <li>Orthografie und Abkürzungen</li>
-                        <li>Lemmatisierung (Stemming)</li>
+                        <li>Lemmatisierung (<em>stemming</em>)</li>
                     </ul>
                 </li>
             </ul>
@@ -333,6 +334,7 @@
                 <h2>Annotationen</h2>
                 <ul>
                     <li>Part-of-Speech tags (POS)</li>
+                    <li>Morphologische Informationen</li>
                     <li>Constituency/Phrase structure parsing</li>
                     <li>Dependency parsing</li>
                     <li>Wordnets, Conceptnets, Framenets ...</li>
@@ -340,14 +342,13 @@
             </div>
             <div>
                 <pre style="margin-right:-170px;float:right;margin-top:40px;" class="x-small">
-     das        essen         ist            fast       fertig    .
-     ART        NN            VVFIN          ADV        ADJD      $.
-( [ <         ><         > ] [          ] [ <         ><       > ]  )
-     art:essen  nsubj:ist     root           rg:fertig  prdadj:ist
-     cn:de/das  cn:de/mahl    cn:de/sein     cn:de/fast cn:de/bereit
+                    das        essen         ist            fast          fertig    .
+STTS:               ART        NN            VVFIN          ADV           ADJD      $.
+              ( [ <         ><         > ] [          ] [ <             ><       > ]  )
+Stanford:          det:essen  nsubj:ist     root           advmod:fertig  prdadj:ist
+conceptnet:        cn:de/das  cn:de/mahl    cn:de/sein     cn:de/fast     cn:de/bereit
 </pre>
             </div>
-            <!-- TODO: Beispiel Das Essen ist fertig. -->
        </main>
     </div>
 
@@ -357,16 +358,26 @@
             <h2>Feature Engineering</h2>
         </header>
         <main>
-            <h2>DTM 1</h2>
-            <ul>
-                <li>Gesamtvokabular: alle Types des Korpus</li>
-                <li>Für alle Dokumente: alle Types zählen</li>
-                <li>→ Tabelle (<em>Document Term/Feature Matrix (DFM/DTM)</em></li>
-                <li>→ Dokumente als Vektoren vergleichbar</li>
-                <li>→ Features ebenfalls als Vektoren vergleichbar</li>
-                <li>Selektion (<em>Stopwords</em>/<em>hapax legomena</em>)</li>
-                <li>Gewichtung (<em>tf/idf</em>)</li>
-            </ul>
+            <h2>Document Term Matrix</h2>
+            <div style="float:left;width:70%;">
+                <ul>
+                    <li>Spalten: alle Types des Korpus ("Vokabular")</li>
+                    <li>Zeilen: alle Dokumente</li>
+                    <li>Zellen: Vorkommen der Types pro Dok. zählen</li>
+                    <li>→ "Vektoren" (Zahlenreihen) repräsentieren Dokumente und auch Features</li>
+                    <li>→ Nach Vektorarithmetik miteinander vergleichbar</li>
+                    <li>Selektion (<em>stopwords</em>, <em>hapax legomena</em>, <em>culling</em>)</li>
+                    <li>Gewichtung (<em>penalize</em> or <em>boost</em> features, <em>tf/idf</em>)</li>
+                </ul>
+            </div>
+            <div class="mfp-lightbox" style="float:right;width:30%;margin-right:-100px;">
+                <a class="green" href="resources/img/dtm_1.png">
+                    <img style="width:100%;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/dtm_1.png"
+                         alt="Document Term Matrix"/>
+                </a><br/>
+                <a class="black x-small" href="https://stackoverflow.com/questions/46470240/combine-dataframe-column-into-document-term-matrix">Document-Term-Matrix einer Tweet-Sammlung (Nutzer "Scott" bei StackOverflow)</a>
+            </div>
        </main>
     </div>
 
@@ -376,10 +387,10 @@
             <h2>Feature Engineering</h2>
         </header>
         <main>
-            <h2>DTM 2</h2>
+            <h2>Document <i>Feature</i> Matrix</h2>
             <ul>
-                <li>Was ist ein Dokument? Z.B. Aufteilung in Sätze</li>
-                <li>Was ist ein Feature? Z.B. Skipgrams</li>
+                <li>Was ist ein Dokument? Z.B. Aufteilung in Paragraphen oder Sätze</li>
+                <li>Was ist ein Feature? Z.B. Skipgrams, Jahreszahl, Autorgender</li>
             </ul>
        </main>
     </div>
