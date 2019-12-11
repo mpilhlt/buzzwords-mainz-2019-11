@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" href="resources/img/apple-touch-icon.png" />
 
     <!-- fonts -->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&display=swap&subset=latin-ext" rel="stylesheet">
 
     <!-- CSS reset and grid -->
     <link href="vendor/normalize/normalize-4.1.1.css" rel="stylesheet" />
@@ -76,9 +76,9 @@
         <h4><strong>2019-11-13</strong> | <a class="green" href="https://www.uni-mainz.de/">JGU Mainz</a></h4>
         <h4><strong class="small">07.B95.050 V: Grundlagen Digitaler Methodik in den Geistes- und Kulturwissenschaften</strong></h4>
 
-        <h1 class="down-100">Von Buzzwords, Stopwords, Wörterbüchern und Word Embeddings. Text Mining und Information Retrieval</h1>
+        <h2 class="down-25">Von Buzzwords, Stopwords, Wörterbüchern und Word Embeddings. Text Mining und Information Retrieval</h1>
 
-        <h4 class="down-100">
+        <h4 class="down-50">
             <strong>Slides:</strong>
             <a href="https://rg-mpg-de.github.io/buzzwords-mainz-2019-11/" title="Präsentation online betrachten">https://rg-mpg-de.github.io/buzzwords-mainz-2019-11/</a>
         </h4>
@@ -109,13 +109,18 @@
                 <li>Natural Language Processing
                     <ul>
                         <li>Preprocessing</li>
-                        <li>Ling. Annotationen</li>
+                        <li>Linguistische Annotationen</li>
                         <li>Feature Engineering</li>
                     </ul>
                 </li>
                 <li>Buzzwords</li>
             </ol>
         </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="intro_samples_0">
@@ -124,8 +129,8 @@
             <h2>Beispiele</h2>
         </header>
         <main>
-            <h2>Suchmaschinen</h2>
-            <div class="mfp-lightbox" style="float:left;width:42%;">
+            <h2 style="margin-bottom:60px;">Suchmaschinen</h2>
+            <div class="mfp-lightbox" style="float:left;width:42%;text-align:center;">
                 <a class="green" href="resources/img/searchengines_1.jpg">
                     <img style="height:250px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
                         src="resources/img/searchengines_1.jpg"
@@ -133,15 +138,20 @@
                 </a><br/>
                 <a class="black x-small" href="https://wildstonesolution.com/top-search-engines/">8 Top Search Engines according to<br/> Wildstone Solution</a>
             </div>
-            <div class="mfp-lightbox" style="float:right;width:42%;margin-right:120px;">
+            <div class="mfp-lightbox" style="float:right;width:42%;margin-right:120px;text-align:center;">
                 <a class="green" href="resources/img/searchengines_2.png">
-                    <img style="margin-left:10px;height:250px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                    <img style="height:250px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
                         src="resources/img/searchengines_2.png"
                         alt="Website search (https://www.salamanca.school/)"/>
                 </a><br/>
                 <a class="black x-small" href="https://www.salamanca.school/de/search.html?field=everything&q=lex&action=Search&lang=de">Website search (Project The School of Salamanca)</a>
             </div>
         </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="intro_samples_1">
@@ -150,8 +160,8 @@
             <h2>Beispiele</h2>
         </header>
         <main>
-            <h2>Antwortsysteme</h2>
-            <div>
+            <h2 style="margin-bottom:40px;">Antwortsysteme</h2>
+            <div style="text-align:center;">
                 <div class="mfp-lightbox">
                     <a class="green" href="resources/img/sleimi_1.png">
                         <img style="height:300px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
@@ -162,6 +172,11 @@
                 <a class="black x-small" href="#literatur">Text annotated with Legal Metadata (Sleimi et al. 2018)</a>
             </div>
         </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="intro_samples_2">
@@ -171,23 +186,28 @@
         </header>
         <main>
             <h2>Automatische Klassifikation</h2>
-            <div class="mfp-lightbox" style="float:left;width:42%;">
+            <div class="mfp-lightbox" style="float:left;width:50%;text-align:center;">
                 <a class="green" href="resources/img/verordnung_1.jpg">
-                    <img style="height:350px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                    <img style="height:300px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
                         src="resources/img/verordnung_1.jpg"
                         alt="Verordnung in Ehesachen Josephs II."/>
                 </a><br/>
                 <a class="black x-small" href="http://nbn-resolving.de/urn/resolver.pl?urn=urn%3Anbn%3Ade%3Absz%3A25-digilib-119498">Verordnung in Ehesachen Josephs II. (UB Freiburg)</a>
             </div>
-            <div class="mfp-lightbox" style="float:right;width:42%;">
+            <div class="mfp-lightbox" style="float:right;width:50%;text-align:center;">
                 <a class="green" href="resources/img/policey_1.png">
                     <img style="height:100px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
                         src="resources/img/policey_1.png"
                         alt="Taxonomy (excerpt)"/>
                 </a><br/>
-                <a class="black x-small" href="https://www.rg.mpg.de/forschung/repertorium-der-policeyordnungen">Auszug aus einer Taxonomie (Projekt Repertorium der Policeyordnungen</a>
+                <a class="black x-small" href="https://www.rg.mpg.de/forschung/repertorium-der-policeyordnungen">Auszug aus einer Taxonomie<br/>(Projekt Repertorium der Policeyordnungen)</a>
             </div>
         </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="intro_samples_3">
@@ -196,16 +216,21 @@
             <h2>Beispiele</h2>
         </header>
         <main>
-            <h2>Autom. Zusammenfassung</h2>
-            <div class="mfp-lightbox">
+            <h2 style="margin-bottom:60px;">Autom. Zusammenfassung</h2>
+            <div class="mfp-lightbox" style="text-align:center;">
                 <a class="green" href="resources/img/wordcloud_1.jpg">
-                    <img style="height:350px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                    <img style="height:250px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
                          src="resources/img/wordcloud_1.jpg"
                          alt="Wordcloud"/>
                 </a><br/>
                 <a class="black x-small" href="#literatur">Eines von mehreren Themen zweier Bücher (Küsters et al. 2019)</a>
             </div>
         </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="intro_samples_4">
@@ -215,15 +240,20 @@
         </header>
         <main>
             <h2>Ähnlichkeitssuche</h2>
-            <div class="mfp-lightbox">
+            <div class="mfp-lightbox" style="text-align:center;">
                 <a class="green" href="resources/img/simil_1.png">
-                    <img style="height:350px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                    <img style="height:300px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
                          src="resources/img/simil_1.png"
                          alt="Similar sentences"/>
                 </a><br/>
                 <a class="black x-small" href="https://www.rg.mpg.de/1845442/notice-19-11-04-coffey-lectures">Suche zwischen Einflüssen in Verfassungsdokumenten (lfd. Forschung von Donal Coffey am MPIeR)</a>
             </div>
         </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="intro_t">
@@ -233,15 +263,20 @@
         </header>
         <main>
             <h2>Zentral:<br/>Document Feature Matrix</h2>
-            <div class="mfp-lightbox">
+            <div class="mfp-lightbox" style="text-align:center;">
                 <a class="green" href="resources/img/dtm_1.png">
-                    <img style="height:350px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                    <img style="height:250px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
                          src="resources/img/dtm_1.png"
                          alt="Document Term Matrix"/>
                 </a><br/>
                 <a class="black x-small" href="https://stackoverflow.com/questions/46470240/combine-dataframe-column-into-document-term-matrix">Document-Term-Matrix einer Tweet-Sammlung (Nutzer "Scott" bei StackOverflow)</a>
             </div>
         </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="ir">
@@ -264,17 +299,26 @@
                 <li>reguläre Ausdrücke</li>
                 <li>"fuzzy matching"</li>
             </ul>
+            <ul class="down-50">
+                <li>spezifische Abfragesprachen<br/>
+                    (z.B. SQL, SPARQL, XPath)</li>
+            </ul>
             <div class="mfp-lightbox" style="float:right;">
                 <a class="green" href="resources/img/synonymsearch_1.png">
-                    <img style="height:200px;margin-top:-70px;float:right;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                    <img style="height:200px;margin-top:-220px;float:right;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
                          src="resources/img/synonymsearch_1.png"
                          alt="Search for Synonyms (Google)"/>
                 </a>
-            </div>
-            <div style="margin-top:180px;float:clear;text-align:right;">
-                <a class="black x-small" href="#literatur">Google wirft Dokumente mit "weird" aus,<br/> wenn nach "strange" gesucht wird (Southern 2018)</a>
+                <div style="margin-top:-10px;margin-bottom:15px;float:clear;text-align:right;">
+                    <a class="black x-small" href="#literatur">Google wirft Dokumente mit "weird" aus,<br/> wenn nach "strange" gesucht wird (Southern 2018)</a>
+                </div>
             </div>
         </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="intro_toc">
@@ -283,12 +327,28 @@
         </header>
         <main>
             <h2>Evaluation</h2>
+            <div class="mfp-lightbox" style="float:right;text-align:right;">
+                <a class="green" href="resources/img/precisionrecall.png">
+                    <img style="height:300px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/precisionrecall.png"
+                         alt="Precision and recall"/>
+                </a>
+                <p class="black x-small" style="float:clear;text-align:right;">
+                    <a class="black x-small" href="https://en.wikipedia.org/wiki/F1_score">Precision und Recall</a><br/>
+                    (<a class="black x-small" href="https://commons.wikimedia.org/wiki/File:Precisionrecall.svg">image cc-by-sa Walber at Wikipedia</a>)
+                </p>
+            </div>
             <ul>
                 <li>Precision (False Positives)</li>
                 <li>Recall (False Negatives)</li>
                 <li>F-Score: \(F = 2{precision \times recall \over precision + recall}\)</li>
             </ol>
        </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="nlp">
@@ -322,6 +382,11 @@
                 </li>
             </ul>
        </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="nlp_annot">
@@ -342,14 +407,19 @@
             </div>
             <div>
                 <pre style="margin-right:-170px;float:right;margin-top:40px;" class="x-small">
-                    das        essen         ist            fast          fertig    .
-STTS:               ART        NN            VVFIN          ADV           ADJD      $.
-              ( [ <         ><         > ] [          ] [ <             ><       > ]  )
-Stanford:          det:essen  nsubj:ist     root           advmod:fertig  prdadj:ist
-conceptnet:        cn:de/das  cn:de/mahl    cn:de/sein     cn:de/fast     cn:de/bereit
+                        das        essen         ist            fast          fertig         .
+POS/STTS:               ART        NN            VVFIN          ADV           ADJD           $.
+Constituency:      ( [ <         ><         > ] [          ] [ <           ><       > ]           )
+Dependency/SUD:         det:essen  nsubj:ist     root           mod:fertig    comp_pred:ist  punct
+Net/conceptnet:         cn:de/das  cn:de/mahl    cn:de/sein     cn:de/fast    cn:de/bereit
 </pre>
             </div>
        </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="nlp_fe1">
@@ -364,8 +434,8 @@ conceptnet:        cn:de/das  cn:de/mahl    cn:de/sein     cn:de/fast     cn:de/
                     <li>Spalten: alle Types des Korpus ("Vokabular")</li>
                     <li>Zeilen: alle Dokumente</li>
                     <li>Zellen: Vorkommen der Types pro Dok. zählen</li>
-                    <li>→ "Vektoren" (Zahlenreihen) repräsentieren Dokumente und auch Features</li>
-                    <li>→ Nach Vektorarithmetik miteinander vergleichbar</li>
+                    <li>→ "Vektoren" (Zahlenreihen) repräsentieren sowohl Dokumente als auch Features</li>
+                    <li>→ Nach Vektorarithmetik vergleichbar</li>
                     <li>Selektion (<em>stopwords</em>, <em>hapax legomena</em>, <em>culling</em>)</li>
                     <li>Gewichtung (<em>penalize</em> or <em>boost</em> features, <em>tf/idf</em>)</li>
                 </ul>
@@ -379,6 +449,11 @@ conceptnet:        cn:de/das  cn:de/mahl    cn:de/sein     cn:de/fast     cn:de/
                 <a class="black x-small" href="https://stackoverflow.com/questions/46470240/combine-dataframe-column-into-document-term-matrix">Document-Term-Matrix einer Tweet-Sammlung (Nutzer "Scott" bei StackOverflow)</a>
             </div>
        </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="nlp_fe2">
@@ -391,9 +466,23 @@ conceptnet:        cn:de/das  cn:de/mahl    cn:de/sein     cn:de/fast     cn:de/
             <ul>
                 <li>Was ist ein Dokument? Z.B. Aufteilung in Paragraphen oder Sätze</li>
                 <li>Was ist ein Feature? Z.B. Skipgrams, Jahreszahl, Autorgender</li>
-<!-- skipgrams: skip-tri-gram-example.png - Michael Struwig at <https://notsobigdatablog.com/2019/01/02/what-is-a-skipgram/> -->
             </ul>
+            <div class="mfp-lightbox" style="width:35%;margin-left:auto;margin-right:auto;margin-top:60px;text-align:center;">
+                <a class="green" href="resources/img/skip-tri-gram-example.png">
+                    <img style="height:100px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/skip-tri-gram-example.png"
+                         alt="Skip-Gram example"/>
+                </a>
+                <p class="black x-small" style="margin-left:-40px;margin-right:-40px;">
+                    <a class="black x-small" href="https://notsobigdatablog.com/2019/01/02/what-is-a-skipgram/">Skip-Gram example by Michael Struwig at Not&nbsp;So&nbsp;Big&nbsp;Data&nbsp;Blog (02 Jan 2019)</a>
+                </p>
+            </div>
        </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="buzz">
@@ -416,7 +505,28 @@ conceptnet:        cn:de/das  cn:de/mahl    cn:de/sein     cn:de/fast     cn:de/
                 <li><em>Latent Semantic Analysis/Indexing (LSA/LSI)</em></li>
                 <li><em>Topic Modeling</em>, <em>Latent Dirichlet Allocation (LDA)</em></li>
             </ul>
+            <div style="width:30%;margin-left:auto;margin-right:auto;text-align:center;margin-top:50px;">
+                <a href="#video-01" class="openVideo">
+                    <img src="resources/img/lsa.png" style="width:100px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"/>
+                </a>
+            </div>
+            <div class="black x-small" style="width:60%;margin-left:auto;margin-right:auto;text-align:center;margin-top:15px;">
+                <a class="black x-small" href="https://en.wikipedia.org/wiki/Latent_semantic_analysis">Latent Semantic Analysis</a></br>
+                (<a class="black x-small" href="https://en.wikipedia.org/wiki/File:Topic_model_scheme.webm">animation cc-by-sa Christoph Carl Kling at Wikipedia</a>)
+            </div>
+            <div id="video-01" class="video-popup mfp-hide" style="text-align:center;">
+                    <video  style="width:600px;margin-left:auto;margin-right:auto;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                            poster="resources/img/lsa.png" autoplay loop controls tabindex="0"
+                            alt="Latent Semantic Analysis animation">
+                        <source src="resources/img/lsa.webm"/>
+                    </video>
+            </div>
        </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="buzz_dr">
@@ -424,26 +534,41 @@ conceptnet:        cn:de/das  cn:de/mahl    cn:de/sein     cn:de/fast     cn:de/
             <h1>3 Buzzwords</h1>
         </header>
         <main>
-            <h2>Dimensionality Reduction</h2>
-            <h3>→ <em>Word Embeddings</em></h3>
-            <ul>
-                <li><em>word2vec</em> (2013)</li>
-                <li><em>ELMo</em> (2018)</li>
-                <li><em>BERT</em> (2018)</li>
-            </ul>
-            <div class="mfp-gallery">
-                <a class="green" href="resources/img/elmo_1.gif">
-                    <img style="height:500px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
-                         src="resources/img/elmo_1.gif"
-                         alt="Elmo"/>
-                </a>
+            <h2 style="margin-bottom:120px;">Dimensionality Reduction</h2>
+            <div style="float:left;width:30%;margin-top:-80px;">
+                <h3>→ <em>Word Embeddings</em></h3>
+                <ul>
+                    <li><em>word2vec</em> (2013)</li>
+                    <li><em>ELMo</em> (2018)</li>
+                    <li><em>BERT</em> (2018)</li>
+                </ul>
+            </div>
+            <div class="mfp-lightbox" style="float:right;width:30%;text-align:center;">
                 <a class="green" href="resources/img/bert_1.jpg">
-                    <img style="height:5px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
-                         src="resources/img/bert_1.jpg"
-                         alt="Bert"/>
+                    <img style="height:250px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                        src="resources/img/bert_1.jpg"
+                        alt=""/>
                 </a>
+                <p class="black x-small">
+                    <a class="black x-small" href="#literatur">Bidirectional Encoder Representations from Transformers</a> (<a class="black x-small" href="https://flic.kr/p/WS3vDg">image cc-by-nc-sa</a> <a class="black x-small" href="https://www.flickr.com/people/cdevers/">Chris Devers</a>)
+                </p>
+            </div>
+            <div class="mfp-lightbox" style="width:30%;margin-left:auto;margin-right:auto;text-align:center;">
+                <a class="green" href="resources/img/elmo_1.gif">
+                    <img style="height:250px;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                        src="resources/img/elmo_1.gif"
+                        alt=""/>
+                </a>
+                <p class="black x-small">
+                    <a class="black x-small" href="#literatur">Embeddings from Language Models</a> (<a class="black x-small" href="https://flic.kr/p/gv56qa">image cc-by</a> <a class="black x-small" href="https://nonprofitorgs.wordpress.com/">Nonprofit Tech 2.0</a>)
+                </p>
             </div>
        </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
     <div class="step slide" id="conclusion">
@@ -461,39 +586,73 @@ conceptnet:        cn:de/das  cn:de/mahl    cn:de/sein     cn:de/fast     cn:de/
         </header>
         <main>
             <h2>NLP in Information Retrieval und Text Mining</h2>
+            <p>Mindestens:</p>
             <ul>
                 <li>Lemmatisierung für varientensensible Suche</li>
-                <li>Feature Engineering für Ranking, Synonyme, "das könnte Sie auch interessieren"</li>
+                <li>Feature Engineering für Ranking, Synonyme, "das könnte Sie auch interessieren", ...</li>
             </ul>
        </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
 
     <div class="step slide" id="literatur">
         <header>
-            <h1>5 Literatur</h1>
+            <h1>5 Literatur (1)</h1>
         </header>
         <main>
-            <ul>
-                <li>Bird, S., Klein, E., Loper, E.: Natural Language Processing with Python. O'Reilly 2009 (Aktualisierte) URL: http://nltk.org/book/</li>
-                <li>Boas, H.C.: Multilingual FrameNets. Methods and Applications. Mouton de Gruyter, 2009</li>
-                <li>Fellbaum, C.: "WordNet and wordnets", in: Brown, Keith et al. (eds.), Encyclopedia of Language and Linguistics. Oxford ²2005, pp. 665-670</li>
-                <li>Ferber, Reginald: Information Retrieval. Suchmodelle und Data-Mining-Verfahren für Textsammlungen und das Web. dpunkt.verlag 2003. URL: http://information-retrieval.de/</li>
-                <li>Firth, J.R.: Papers in Linguistics 1934-51. Longmans, 1957</li>
-                <li>Haenelt, Karin: Ähnlichkeitsmaße für Vektoren. Kursfolien. 2006. URL: http://kontext.fraunhofer.de/haenelt/kurs/folien/VektorAehnlichkeit-2.pdf</li>
-                <li>Jannidis, F., Kohle, H., Rehbein, M. (Hrsg.): Digital Humanities. Eine Einführung. Metzler, 2017</li>
-                <li>Jurafsky, D., Martin, J.H.: Speech and Language Processing. Prentice Hall, ²2008. (Besser, weil aktualisiert und frei verfügbar: URL: https://web.stanford.edu/~jurafsky/slp3/)</li>
-                <li><a name="lit_kuesters_et_al_2019"/>Küsters, A., Volind, L., Wagner, A.: "Digital Humanities and the State of Legal History. A Text Mining Perspective", in: Rechtsgeschichte 27 (2019). DOI: <a href="http://dx.doi.org/10.12946/rg27/244-259">http://dx.doi.org/10.12946/rg27/244-259</a></li>
-                <li>Mikolov, T., Chen, K., Corrado, G., Dean, J.: "Efficient Estimation of Word Representations in Vector Space". URL: https://arxiv.org/abs/1301.3781</li>
-                <li>Sarkar, D.: Text Analysis with Python. Apress, 2016</li>
-                <li>Schmid, H.: Improvements in Part-of-Speech Tagging with an Application to German. Proceedings of the ACL SIGDAT-Workshop. Dublin, Ireland. 1995 URL: https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/tree-tagger2.pdf
-                    <br/>(Software unter URL: https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/)</li>
-                <li>Silge, J., Robinson, D.: Text Mining with R. O'Reilly, 2017. URL: http://tidytextmining.com</li>
-                <li><a name="lit_sleimi_et_al_2018"/>Sleimi, A., N. Sannier, M. Sabetzadeh, L. Briand, und J. Dann: "Automated Extraction of Semantic Legal Metadata using Natural Language Processing", in: 2018 IEEE 26th International Requirements Engineering Conference (RE), 124–35, 2018. DOI: <a href="https://doi.org/10.1109/RE.2018.00022">https://doi.org/10.1109/RE.2018.00022</a></li>
-                <li><a name="lit_southern_2018"/>Southern, M.: "Google Begins Using Neural Matching to Understand Synonyms, Impacting 30% of Queries", in: Search Engine Journal, September 24, 2018, URL: <a href="https://www.searchenginejournal.com/google-begins-using-neural-matching-to-understand-synonyms-impacting-30-of-queries/271035">https://www.searchenginejournal.com/google-begins-using-neural-matching-to-understand-synonyms-impacting-30-of-queries/271035</a>
-                <li>Speer, R., Chin, J. and Havasi, C.: "ConceptNet 5.5: An Open Multilingual Graph of General Knowledge", in: Poceedings of AAAI 31 (2017). URL: https://arxiv.org/abs/1612.03975</li>
+            <ul class="x-small">
+                <li>Bird, S. et al.: <em>Natural Language Processing with Python</em>. O'Reilly, 2009 (Aktualisiert:) <a href="http://nltk.org/book/">http://nltk.org/book/</a></li>
+                <li>Boas, H.C.: <em>Multilingual FrameNets. Methods and Applications</em>. Mouton de Gruyter, 2009</li>
+                <li>Chilakapati, A.: "Semantics at Scale: BERT + Elasticsearch". <em>Data Exploration Blog</em> October 28, 2019 <a href="http://xplordat.com/2019/10/28/semantics-at-scale-bert-elasticsearch/">http://xplordat.com/2019/10/28/semantics-at-scale-bert-elasticsearch/</a></li>
+                <li>Choi, S. et al.: "A survey of Binary similarity and distance measures", in: <em>Journal of Systemics, Cybernetics and Informatics</em> 8/1 (2010), pp. 43-48 <a href="http://www.iiisci.org/journal/CV$/sci/pdfs/GS315JG.pdf">http://www.iiisci.org/journal/CV$/sci/pdfs/GS315JG.pdf</a></li>
+                <li>Devlin, J. et al.: "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" (2018) <a href="https://arxiv.org/abs/1810.04805">arXiv:1810.04805</a></li>
+                <li>Fellbaum, C.: "WordNet and wordnets", in: Brown, K. et al. (eds.): <em>Encyclopedia of Language and Linguistics</em>. Oxford Univ. Press, ²2005, pp. 665-670</li>
+                <li>Ferber, R.: <em>Information Retrieval. Suchmodelle und Data-Mining-Verfahren für Textsammlungen und das Web</em>. dpunkt.verlag, 2003 <a href="http://information-retrieval.de/">http://information-retrieval.de/</a></li>
+                <li>Firth, J.R.: <em>Papers in Linguistics 1934-51</em>. Longmans, 1957</li>
+                <li>Gerdes, K. et al.: "Improving Surface-syntactic Universal Dependencies (SUD): surface-syntactic relations and deep syntactic features", in: <em>Proceedings of the 18th International Workshop on Treebanks and Linguistic Theories (TLT, SyntaxFest 2019)</em>. ACL, 2019, pp. 126-132 <a href="https://www.aclweb.org/anthology/W19-7814">https://www.aclweb.org/anthology/W19-7814</a></li>
+                <li>Haenelt, K.: "Ähnlichkeitsmaße für Vektoren. Kursfolien" (2006) <a href="http://kontext.fraunhofer.de/haenelt/kurs/folien/VektorAehnlichkeit-2.pdf">http://kontext.fraunhofer.de/haenelt/kurs/folien/VektorAehnlichkeit-2.pdf</a></li>
+                <li>Jannidis, F. et al. (Hrsg.): <em>Digital Humanities. Eine Einführung</em>. Metzler, 2017</li>
+            </ul>
+            <p style="text-align:center;">...</p>
+        </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
+    </div>
+
+
+    <div class="step slide" id="literatur2">
+        <header>
+            <h1>5 Literatur (2)</h1>
+        </header>
+        <main>
+            <ul class="x-small">
+                <li>Jurafsky, D. et al.: <em>Speech and Language Processing</em>. Prentice Hall, ²2008 (Besser, weil aktualisiert und frei verfügbar:) <a href="https://web.stanford.edu/~jurafsky/slp3/">https://web.stanford.edu/~jurafsky/slp3/</a></li>
+                <li>Koller, A.: "Distributionelle Semantik. Vorlesung 'Computerlinguistische Techniken'" (2016) <a href="http://tagh.de/tom/wp-content/uploads/16-Distributionelle-Semantik.pdf">http://tagh.de/tom/wp-content/uploads/16-Distributionelle-Semantik.pdf</a></li>
+                <li>Küsters, A. et al.: "Digital Humanities and the State of Legal History. A Text Mining Perspective", in: <em>Rechtsgeschichte</em> 27 (2019). DOI: <a href="http://dx.doi.org/10.12946/rg27/244-259">10.12946/rg27/244-259</a></li>
+                <li>Peters, M.E. et al.: "Deep contextualized word representations" <em>NAACL 2018</em> <a href="https://arxiv.org/abs/1802.05365">arXiv:1802.05365</a>. <em>(ELMo)</em></li>
+                <li>Mikolov, T. et al.: "Efficient Estimation of Word Representations in Vector Space" (2013) <a href="https://arxiv.org/abs/1301.3781">arXiv:1301.3781</a>. <em>(word2vec)</em></li>
+                <li>Sarkar, D.: <em>Text Analysis with Python</em>. Apress, 2016</li>
+                <li>Schmid, H.: "Improvements in Part-of-Speech Tagging with an Application to German", in: <em>Proceedings of the ACL SIGDAT-Workshop. Dublin, Ireland. 1995</em> <a href="https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/tree-tagger2.pdf">https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/tree-tagger2.pdf</a><br/>(Software unter <a href="https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/">https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/</a>)</li>
+                <li>Silge, J. et al.: <em>Text Mining with R</em>. O'Reilly, 2017. <a href="http://tidytextmining.com/">http://tidytextmining.com</a></li>
+                <li>Sleimi, A. et al.: "Automated Extraction of Semantic Legal Metadata using Natural Language Processing", in: <em>IEEE 26th International Requirements Engineering Conference (RE)</em>, pp. 124–35, 2018. DOI: <a href="https://doi.org/10.1109/RE.2018.00022">10.1109/RE.2018.00022</a></li>
+                <li>Southern, M.: "Google Begins Using Neural Matching to Understand Synonyms, Impacting 30% of Queries", in: <em>Search Engine Journal</em>, September 24, 2018 <a href="https://www.searchenginejournal.com/google-begins-using-neural-matching-to-understand-synonyms-impacting-30-of-queries/271035">https://www.searchenginejournal.com/google-begins-using-neural-matching-to-understand-synonyms-impacting-30-of-queries/271035</a></li>
+                <li>Speer, R., Chin, J. and Havasi, C.: "ConceptNet 5.5: An Open Multilingual Graph of General Knowledge", in: <em>Proceedings of AAAI 31</em> (2017) <a href="https://arxiv.org/abs/1612.03975">arXiv:1612.03975</a></li>
+                <li>Westpfahl, S. et al.: "STTS 2.0: Guidelines für die Annotation von POS-Tags für Transkripte gesprochener Sprache in Anlehnung an das Stuttgart Tübingen Tagset (STTS)" (2017) <a href="https://ids-pub.bsz-bw.de/frontdoor/deliver/index/docId/6063/file/Westpfahl_Schmidt_Jonietz_Borlinghaus_STTS_2_0_2017.pdf">https://ids-pub.bsz-bw.de/frontdoor/deliver/index/docId/6063/file/Westpfahl_Schmidt_Jonietz_Borlinghaus_STTS_2_0_2017.pdf</a></li>
             </ul>
        </main>
+        <footer>
+            <div style="float: left">Text Mining und Information Retrieval</div>
+            <div style="float: right">Mainz, 2019-11-13</div>
+            <div style="margin: 0 auto; width: 100px;"><a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a></div>
+        </footer>
     </div>
 
 
@@ -615,6 +774,23 @@ if ("ontouchstart" in document.documentElement) {
 <!-- magnific popup -->
 <script src="vendor/magnific-popup/jquery.magnific-popup.min-1.1.0.js"></script>
 <script src="resources/js/magnific-popup.lightbox.js"></script>
+
+<script type="text/javascript">
+$('.openVideo').magnificPopup({
+type: 'inline',
+callbacks: {
+  open: function() {
+    $('html').css('margin-right', 0);
+    // Play video on open:
+    $(this.content).find('video')[0].play();
+    },
+  close: function() {
+    // Reset video on close:
+    $(this.content).find('video')[0].load();
+    }
+  }
+});
+</script>
 
 <script src="js/impress.js"></script>
 <script>impress().init();</script>

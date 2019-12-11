@@ -10,7 +10,7 @@ html {
 
 body {
 	font-family: 'Open Sans', sans-serif;
-	line-height: 40px;
+	line-height: 140%;
 	font-size: 32px;
 	min-height: 740px;
 	pointer-events: none;	/* Disables click events in body */
@@ -18,6 +18,8 @@ body {
 
 .step {
 	width: 1060px;
+	min-height: 100%;
+	position: relative;
 	padding: 0 0 40px 0;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
@@ -209,7 +211,7 @@ sub {
 
 ol, ul {
 	margin: 0 0 20px 40px;
-	line-height: 1;
+	line-height: 1.3;
 }
 
 ul {
@@ -316,6 +318,7 @@ CLASSES FOR SPECIAL LAYOUT/TYPOGRAPHY
 
 .x-small {
 	font-size: 18px;
+	line-height: 1.1;
 }
 
 .skip {

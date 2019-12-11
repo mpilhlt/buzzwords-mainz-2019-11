@@ -1,3 +1,7 @@
+#impress, #impress>div {
+  min-height: 100%;
+} 
+
 .step .notes {
 	display: none;
 }
@@ -90,16 +94,19 @@ header:after {
     font-size:0.01em;
 }
 */
-/* Fussbereich immer am Ende einer Folie positionieren */
 
+/* Fussbereich immer am Ende einer Folie positionieren */
 .step footer {
   position:absolute;
-  bottom:20px;
-  left:50px;
+  bottom:0px;
+  height:30px;
+  width:100%;
   z-index:9999;
-  font-size:18px;
+  font-size:12px;
   line-height:1.5;
+  border-top:1px solid #7ca6a6;
 }
+
 
 /* Fest verankerter Text ausserhalb der Praesentation */
 
@@ -136,6 +143,11 @@ h2 {
 img {
     max-width: none;
     width: auto;
+}
+
+a.x-small {
+    font-weight: normal;
+    line-height: 1.2;
 }
 
 /* Die Uebersichts-Folie ausblenden fuer nicht HTML5-faehige Browser */
